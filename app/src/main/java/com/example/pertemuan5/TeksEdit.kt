@@ -15,3 +15,9 @@ fun FormatDataDiri(modifier: Modifier
     var textAlamat by remember { mutableStateOf(value = "") }
     var textJK by remember { mutableStateOf(value = "") }
 
+    //variabel untuk menyimpan data yang diperoleh dari komponen UI
+    var nama by remember { mutableStateOf(value = "") }
+    var alamat by remember { mutableStateOf(value = "") }
+    var jenis by remember { mutableStateOf(value = "") }
+
+    val gender:List<String> = listOf("Laki-laki", "Perempuan")
