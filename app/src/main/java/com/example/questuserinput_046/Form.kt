@@ -47,6 +47,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.material3.AlertDialog
 
 @Composable
 fun RegistrationForm(modifier: Modifier = Modifier) {
@@ -68,6 +69,7 @@ fun RegistrationForm(modifier: Modifier = Modifier) {
 
     val gender: List<String> = listOf("Laki-laki", "Perempuan")
     var setuju by remember { mutableStateOf(false) }
+    var showDialog by remember { mutableStateOf(false) }
 
     Box(
         modifier = modifier
@@ -246,12 +248,35 @@ fun RegistrationForm(modifier: Modifier = Modifier) {
                                     rt = textRT
                                     rw = textRW
                                     umur = textUmur
+
+
                                 }
                             ){
                                 Text(text = "Submit")
                             }
                             Spacer(modifier = Modifier.height(25.dp))
-                        }
+                            ElevatedCard(
+                                elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
+                                colors = CardDefaults.cardColors(containerColor =Color.DarkGray),
+                                modifier = Modifier
+                                    .height(height = 200.dp)
+                                    .width(width = 300.dp)
+                            ) {
+                                Column(
+                                    modifier = Modifier.padding(
+                                        horizontal = 5.dp,
+                                        vertical = 15.dp
+                                    ),
+                                ) {
+                                    Text(text = "NamaLengkap :" + nama, color = Color.White)
+                                    Text(text = "Kota Asal :" + asal, color = Color.White)
+                                    Text(text = "Tanggal Lahir :" + tanggal, color = Color.White)
+                                    Text(text = "RT:" + rt, color = Color.White)
+                                    Text(text = "RW :" + rw, color = Color.White)
+                                    Text(text = "Umur :" + umur, color = Color.White)
+                                    Text(text = "Jenis Kelamin :" + jenis, color = Color.White)
+                                }
+                            }
 
 
                         }
@@ -259,6 +284,6 @@ fun RegistrationForm(modifier: Modifier = Modifier) {
                 }
             }
         }
-    }
+    }}
 
 
