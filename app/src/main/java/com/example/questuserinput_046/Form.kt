@@ -178,83 +178,91 @@ fun RegistrationForm(modifier: Modifier = Modifier) {
                     )
                     Spacer(modifier = Modifier.height(17.dp))
 
-                    Row(modifier = Modifier.fillMaxWidth()) {
-                        Text(
-                            text = "Jenis Kelamin",
-                            style = MaterialTheme.typography.bodyLarge,
-                            modifier = Modifier.padding(bottom = 8.dp)
-                        )
-                    }
-                    Row(modifier = Modifier.fillMaxWidth()) {
-                        gender.forEach { item ->
-                            Row(
-                                modifier = Modifier.selectable(
-                                    selected = textJK == item,
-                                    onClick = { textJK = item }
-                                ), verticalAlignment = Alignment.CenterVertically) {
-                                RadioButton(
-                                    selected = textJK == item,
-                                    onClick = {
-                                        textJK = item
-                                    })
-                                Text(text = item)
-                            }
-                            Spacer(modifier = Modifier.height(10.dp))
-                            Row(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .selectable(
-                                        selected = setuju,
-                                        onClick = { setuju = !setuju }
-                                    ),
-                                verticalAlignment = Alignment.CenterVertically
-                            ) {
-                                Checkbox(
-                                    checked = setuju,
-                                    onCheckedChange = { setuju = it }
-                                )
-                                Text(
-                                    text = "Saya setuju dengan syarat dan ketentuan yang berlaku",
-                                    style = MaterialTheme.typography.bodySmall,
-                                    modifier = Modifier.padding(start = 8.dp)
-                                )
-                            }
-                            Spacer(modifier = Modifier.height(20.dp))
-                            Button(
-                                modifier = Modifier.fillMaxWidth(fraction = 1f),
-                                onClick = {
-                                    nama = textNamaLengkap
-                                    jenis = textJK
-                                    asal = textKotaAsal
+                    Row(
+                        modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
+                        verticalAlignment = Alignment.Top
+                    ) {
+                        Column(
+                            modifier = Modifier.weight(1f)
+                        ) {
+                            Text(
+                                text = "Jenis Kelamin",
+                                style = MaterialTheme.typography.bodyLarge,
+                                modifier = Modifier.padding(bottom = 8.dp)
+                            )
+                            gender.forEach { item ->
+                                Row(
+                                    modifier = Modifier.selectable(
+                                        selected = textJK == item,
+                                        onClick = { textJK = item }
+                                    ), verticalAlignment = Alignment.CenterVertically) {
+                                    RadioButton(
+                                        selected = textJK == item,
+                                        onClick = {
+                                            textJK = item
+                                        })
+                                    Text(text = item, style = MaterialTheme.typography.bodySmall)
                                 }
-                            ) {
-                                Text(text = stringResource(id = R.string.submit))
-                            }
-                            Spacer(modifier = Modifier.height(25.dp))
-                            ElevatedCard(
-                                elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
-                                colors = CardDefaults.cardColors(containerColor = Color.Black),
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .height(height = 160.dp)
-
-                            ) {
-                                Column(
-                                    modifier = Modifier.padding(
-                                        horizontal = 15.dp,
-                                        vertical = 15.dp
-                                    ),
-                                    verticalArrangement = Arrangement.spacedBy(4.dp) // Beri jarak
+                                Row(
+                                    modifier = Modifier
+                                        .fillMaxWidth(1f)
+                                        .padding(top = 4.dp)
+                                        .selectable(
+                                            selected = setuju,
+                                            onClick = { setuju = !setuju }
+                                        ),
+                                    verticalAlignment = Alignment.CenterVertically
                                 ) {
-                                    Text(text = "NamaLengkap : " + nama, color = Color.White)
-                                    Text(text = "KotaAsal : " + asal, color = Color.White)
-                                    Text(text = "Tanggal Lahir : " + tanggal, color = Color.White)
-                                    Text(text = "RT/RW : " + rt + "/" + rw, color = Color.White)
-                                    Text(text = "Umur : " + umur, color = Color.White)
-                                    Text(text = "Gender : " + jenis, color = Color.White)
+                                    Checkbox(
+                                        checked = setuju,
+                                        onCheckedChange = { setuju = it }
+                                    )
+                                    Text(
+                                        text = "Saya setuju dengan syarat dan ketentuan yang berlaku",
+                                        style = MaterialTheme.typography.bodySmall,
+                                        modifier = Modifier.padding(start = 4.dp)
+                                    )
                                 }
-                            }
+                                Spacer(modifier = Modifier.height(20.dp))
+                                Button(
+                                    modifier = Modifier.fillMaxWidth(fraction = 1f),
+                                    onClick = {
+                                        nama = textNamaLengkap
+                                        jenis = textJK
+                                        asal = textKotaAsal
+                                    }
+                                ) {
+                                    Text(text = stringResource(id = R.string.submit))
+                                }
+                                Spacer(modifier = Modifier.height(25.dp))
+                                ElevatedCard(
+                                    elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
+                                    colors = CardDefaults.cardColors(containerColor = Color.Black),
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .height(height = 160.dp)
 
+                                ) {
+                                    Column(
+                                        modifier = Modifier.padding(
+                                            horizontal = 15.dp,
+                                            vertical = 15.dp
+                                        ),
+                                        verticalArrangement = Arrangement.spacedBy(4.dp) // Beri jarak
+                                    ) {
+                                        Text(text = "NamaLengkap : " + nama, color = Color.White)
+                                        Text(text = "KotaAsal : " + asal, color = Color.White)
+                                        Text(
+                                            text = "Tanggal Lahir : " + tanggal,
+                                            color = Color.White
+                                        )
+                                        Text(text = "RT/RW : " + rt + "/" + rw, color = Color.White)
+                                        Text(text = "Umur : " + umur, color = Color.White)
+                                        Text(text = "Gender : " + jenis, color = Color.White)
+                                    }
+                                }
+
+                            }
                         }
                     }
                 }
