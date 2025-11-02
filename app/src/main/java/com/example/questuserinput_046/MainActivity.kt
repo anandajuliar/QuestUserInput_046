@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             QuestUserInput_046Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    FormatDataDiri(
+                    RegistrationForm(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }

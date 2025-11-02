@@ -70,6 +70,7 @@ fun RegistrationForm(modifier: Modifier = Modifier) {
             style = MaterialTheme.typography.headlineSmall,
             modifier = Modifier.padding(bottom = 16.dp)
         )
+        Spacer(modifier = Modifier.height(20.dp))
         OutlinedTextField(
             value = textNamaLengkap,
             singleLine = true,
@@ -80,6 +81,7 @@ fun RegistrationForm(modifier: Modifier = Modifier) {
                 textNamaLengkap = it
             }
         )
+        Spacer(modifier = Modifier.height(10.dp))
         OutlinedTextField(
             value = textKotaAsal,
             singleLine = true,
@@ -90,6 +92,7 @@ fun RegistrationForm(modifier: Modifier = Modifier) {
                 textKotaAsal = it
             }
         )
+        Spacer(modifier = Modifier.height(10.dp))
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(8.dp),
@@ -115,7 +118,19 @@ fun RegistrationForm(modifier: Modifier = Modifier) {
                     textRT = it
                 }
             )
+            OutlinedTextField(
+                value = textRW,
+                singleLine = true,
+                shape = MaterialTheme.shapes.large,
+                modifier = Modifier.weight(1f),
+                label = { Text(text = "RW") },
+                onValueChange = {
+                    textRW = it
+                }
+            )
+
         }
+        Spacer(modifier = Modifier.height(10.dp))
         OutlinedTextField(
             value = textUmur,
             singleLine = true,
@@ -126,11 +141,13 @@ fun RegistrationForm(modifier: Modifier = Modifier) {
                 textUmur = it
             }
         )
+        Spacer(modifier = Modifier.height(17.dp))
         Text(
             text = "Jenis Kelamin",
             style = MaterialTheme.typography.headlineSmall,
             modifier = Modifier.padding(bottom = 8.dp)
         )
+        Spacer(modifier = Modifier.height(10.dp))
         Row {
             gender.forEach { item ->
                 Row(modifier = Modifier.selectable(
@@ -147,6 +164,7 @@ fun RegistrationForm(modifier: Modifier = Modifier) {
                 }
             }
         }
+        Spacer(modifier = Modifier.height(10.dp))
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -167,6 +185,7 @@ fun RegistrationForm(modifier: Modifier = Modifier) {
                 modifier = Modifier.padding(start = 8.dp)
             )
         }
+        Spacer(modifier = Modifier.height(20.dp))
         Button(
             modifier = Modifier.fillMaxWidth(fraction = 1f),
             onClick = {
@@ -177,6 +196,7 @@ fun RegistrationForm(modifier: Modifier = Modifier) {
         ) {
             Text(text = stringResource(id = R.string.submit))
         }
+        Spacer(modifier = Modifier.height(25.dp))
         ElevatedCard(
             elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
             colors = CardDefaults.cardColors(containerColor =Color.Black),
