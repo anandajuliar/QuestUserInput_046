@@ -114,6 +114,16 @@ fun RegistrationForm(modifier: Modifier = Modifier) {
                     textRT = it
                 }
             )
+            OutlinedTextField(
+                value = textRW,
+                singleLine = true,
+                shape = MaterialTheme.shapes.large,
+                modifier = Modifier.weight(1f),
+                label = { Text(text = "RW") },
+                onValueChange = {
+                    textRW = it
+                }
+            )
         }
     }
 }
