@@ -125,5 +125,10 @@ fun RegistrationForm(modifier: Modifier = Modifier) {
                 textUmur = it
             }
         )
+        Text(
+            text = "Jenis Kelamin",
+            style = MaterialTheme.typography.headlineSmall,
+            modifier = Modifier.padding(bottom = 8.dp)
+        )
     }
 }
