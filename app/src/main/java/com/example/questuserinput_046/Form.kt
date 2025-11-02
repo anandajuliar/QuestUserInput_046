@@ -60,6 +60,7 @@ fun RegistrationForm(modifier: Modifier = Modifier) {
     var jenis by remember { mutableStateOf(value = "") }
 
     val gender:List<String> = listOf("Laki-laki", "Perempuan")
+    var setuju by remember { mutableStateOf(false) }
 
     Column(modifier = Modifier.padding(top = 50.dp),
         verticalArrangement = Arrangement.Top,
@@ -189,4 +190,4 @@ fun RegistrationForm(modifier: Modifier = Modifier) {
                 Text(text = "KotaAsal :"+asal, color = Color.White)
             }
     }
-}
+}}
