@@ -79,5 +79,15 @@ fun RegistrationForm(modifier: Modifier = Modifier) {
                 textNamaLengkap = it
             }
         )
+        OutlinedTextField(
+            value = textKotaAsal,
+            singleLine = true,
+            shape = MaterialTheme.shapes.large,
+            modifier = Modifier.width(width= 250.dp),
+            label = { Text(text = "Kota Asal") },
+            onValueChange = {
+                textKotaAsal = it
+            }
+        )
     }
 }
