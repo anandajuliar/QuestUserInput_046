@@ -69,5 +69,15 @@ fun RegistrationForm(modifier: Modifier = Modifier) {
             style = MaterialTheme.typography.headlineSmall,
             modifier = Modifier.padding(bottom = 16.dp)
         )
+        OutlinedTextField(
+            value = textNamaLengkap,
+            singleLine = true,
+            shape = MaterialTheme.shapes.large,
+            modifier = Modifier.width(width= 250.dp),
+            label = { Text(text = "Nama Lengkap") },
+            onValueChange = {
+                textNamaLengkap = it
+            }
+        )
     }
 }
