@@ -146,5 +146,25 @@ fun RegistrationForm(modifier: Modifier = Modifier) {
                 }
             }
         }
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 8.dp)
+                .selectable(
+                    selected = setuju,
+                    onClick = { setuju = !setuju }
+                ),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Checkbox(
+                checked = setuju,
+                onCheckedChange = { setuju = it }
+            )
+            Text(
+                text = "Saya setuju dengan syarat dan ketentuan yang berlaku",
+                style = MaterialTheme.typography.bodySmall,
+                modifier = Modifier.padding(start = 8.dp)
+            )
+        }
     }
 }
