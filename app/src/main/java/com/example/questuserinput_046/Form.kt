@@ -89,5 +89,10 @@ fun RegistrationForm(modifier: Modifier = Modifier) {
                 textKotaAsal = it
             }
         )
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
     }
 }
