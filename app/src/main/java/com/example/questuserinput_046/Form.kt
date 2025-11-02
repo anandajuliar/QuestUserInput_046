@@ -63,5 +63,11 @@ fun RegistrationForm(modifier: Modifier = Modifier) {
 
     Column(modifier = Modifier.padding(top = 50.dp),
         verticalArrangement = Arrangement.Top,
-        horizontalAlignment = Alignment.CenterHorizontally){}
+        horizontalAlignment = Alignment.CenterHorizontally){
+        Text(
+            text = "Form Registrasi",
+            style = MaterialTheme.typography.headlineSmall,
+            modifier = Modifier.padding(bottom = 16.dp)
+        )
+    }
 }
