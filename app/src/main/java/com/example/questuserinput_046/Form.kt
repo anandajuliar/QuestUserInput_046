@@ -166,5 +166,15 @@ fun RegistrationForm(modifier: Modifier = Modifier) {
                 modifier = Modifier.padding(start = 8.dp)
             )
         }
+        Button(
+            modifier = Modifier.fillMaxWidth(fraction = 1f),
+            onClick = {
+                nama=textNamaLengkap
+                jenis=textJK
+                asal=textKotaAsal
+            }
+        ) {
+            Text(text = stringResource(id = R.string.submit))
+        }
     }
 }
