@@ -43,21 +43,5 @@ import androidx.compose.runtime.setValue
 
 @Composable
 fun RegistrationForm(modifier: Modifier = Modifier) {
-    var textNamaLengkap by remember { mutableStateOf(value = "") }
-    var textKotaAsal by remember { mutableStateOf(value = "") }
-    var textTanggalLahir by remember { mutableStateOf(value = "") }
-    var textRT by remember { mutableStateOf(value = "") }
-    var textRW by remember { mutableStateOf(value = "") }
-    var textUmur by remember { mutableStateOf(value = "") }
-    var textJK by remember { mutableStateOf(value = "") }
 
-    var nama by remember { mutableStateOf(value = "") }
-    var asal by remember { mutableStateOf(value = "") }
-    var tanggal by remember { mutableStateOf(value = "") }
-    var rt by remember { mutableStateOf(value = "") }
-    var rw by remember { mutableStateOf(value = "") }
-    var umur by remember { mutableStateOf(value = "") }
-    var jenis by remember { mutableStateOf(value = "") }
-
-    val gender:List<String> = listOf("Laki-laki", "Perempuan")
 }
