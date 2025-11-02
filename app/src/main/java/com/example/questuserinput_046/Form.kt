@@ -94,5 +94,16 @@ fun RegistrationForm(modifier: Modifier = Modifier) {
             horizontalArrangement = Arrangement.spacedBy(8.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
+            OutlinedTextField(
+                value = textTanggalLahir,
+                singleLine = true,
+                shape = MaterialTheme.shapes.large,
+                modifier = Modifier.weight(2f),
+                label = { Text(text = "Tanggal Lahir") },
+                onValueChange = {
+                    textTanggalLahir = it
+                }
+            )
+        }
     }
 }
